@@ -1,7 +1,42 @@
-import React from "react";
+import React, { useState } from "react";
 import "../signup/signup.css";
+import { useNavigate } from "react-router-dom";
 
-function Signup() {
+function Signup({ onLogin }) {
+  const navigate = useNavigate();
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [passwordConfirmation, setPasswordConfirmation] = useState("");
+  const [errors, setErrors] = useState([]);
+
+  const to_login = () => {
+    navigate("/");
+  };
+ 
+  function handleSubmit(e) {
+    e.preventDefault();
+    setErrors([]);
+    fetch("/signup", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        username,
+        password,
+        password_confirmation: passwordConfirmation,
+      }),
+    }).then((r) => {
+      if (r.ok) {
+        r.json().then((user) => onLogin(user));
+        navigate("/home");
+      } else {
+        r.json().then((err) => setErrors(err.errors));
+      }
+    });
+  }
+  console.log(errors);
+
   return (
     <>
       <div className="signup">
@@ -13,20 +48,45 @@ function Signup() {
             <label for="username">
               <h3 style={{ color: "white" }}>Username</h3>
             </label>
-            <input type="text" className='input' placeholder="username"></input>
-            
+            <input
+              type="text"
+              className="input"
+              placeholder="username"
+              autoComplete="off"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+            ></input>
+
             <label for="password">
               <h3 style={{ color: "white" }}>Password</h3>
             </label>
-            <input type="password" className='input' placeholder="**********"></input>
+            <input
+              type="password"
+              className="input"
+              placeholder="**********"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              autoComplete="current-password"
+            ></input>
 
             <label for="password confirmation">
               <h3 style={{ color: "white" }}>Password confirmation</h3>
             </label>
-            <input type="password" className='input' placeholder="**********"></input>
+            <input
+              type="password"
+              className="input"
+              placeholder="**********"
+              value={passwordConfirmation}
+              onChange={(e) => setPasswordConfirmation(e.target.value)}
+              autoComplete="current-password"
+            ></input>
 
-            <button className="btn">SignUp</button>
-            <button className="sgn">Have an account? login</button>
+            <button onClick={handleSubmit} className="btn">
+              SignUp
+            </button>
+            <button onClick={to_login} className="sgn">
+              Have an account? login
+            </button>
           </div>
         </div>
       </div>
