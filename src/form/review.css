@@ -1,0 +1,17 @@
+.review {
+  background-color: #f6e58b;
+  height: 100vh;
+}
+.review-card {
+  margin: auto;
+  background-color: #fdfeea;
+  width: 90%;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+  box-shadow: 2px 2px 12px rgba(128, 123, 123, 0.768);
+  justify-content: space-around;
+}

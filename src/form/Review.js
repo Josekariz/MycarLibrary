@@ -1,9 +1,15 @@
 import NavBar from "../components/navbar/Navbar";
-
+import "./review.css"
 function Review() {
   return ( <>
+  <div className="review">
   <NavBar/>
-  review
+  <div className="review-card">
+    <form>
+      
+    </form>
+  </div>
+  </div>
   </> );
 }
 
