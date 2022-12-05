@@ -85,7 +85,7 @@ function Signup({ onLogin }) {
               SignUp
             </button>
             <button onClick={to_login} className="sgn">
-              Have an account? login
+              Have an account? <em>LogIn</em>
             </button>
           </div>
         </div>
