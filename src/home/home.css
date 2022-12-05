@@ -1,0 +1,90 @@
+.home {
+  background-color: #f6e58b;
+  height: 100vh;
+}
+.homecard {
+  margin: auto;
+  background-color: #fdfeea;
+  width: 90%;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+  box-shadow: 2px 2px 12px rgba(128, 123, 123, 0.768);
+  justify-content: space-around;
+}
+.car-card {
+  height: auto;
+  width: 22%;
+  border: 2px solid #b3ee20;
+  border-radius: 15px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.img {
+  object-fit: cover;
+
+  border-radius: 5px;
+}
+.txt {
+  width: 100%;
+  border: #b3ee20 2px solid;
+  text-align: center;
+  min-height: 100px;
+  display: flex;
+  flex-wrap: wrap;
+
+  padding: 10px;
+  overflow-y: scroll;
+}
+.btnholder {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  height: auto;
+  width: auto;
+}
+.bt {
+  padding: 2px 12px;
+border-radius: 2px;
+}
+
+.green{
+  background-color: #B3EE20;
+}
+.red{
+  background-color: rgba(255, 51, 20, .85);
+}
+@media screen and (max-width: 500px) {
+  .car-card {
+    width: 70%;
+  }
+}
+@media screen and (max-width: 900px) {
+    .btnholder {
+    width: 70%;
+    justify-content: space-around;
+    padding: 2px;
+  }
+  .bt{
+padding: 2px;
+
+  }
+}
+@media screen and (max-width: 720px) {
+  .car-card {
+    width: 70%;
+    padding: 1px;
+    justify-self: space-around;
+  }
+
+}
