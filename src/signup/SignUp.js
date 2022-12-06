@@ -29,7 +29,7 @@ function Signup({ onLogin, autologin }) {
     }).then((r) => {
       if (r.ok) {
         r.json().then((user) => onLogin(user));
-        autologin()
+        autologin();
         navigate("/home");
       } else {
         r.json().then((err) => setErrors(err.errors));
@@ -37,7 +37,9 @@ function Signup({ onLogin, autologin }) {
     });
   }
   const handleClear = (event) => {
-    event.target.value = "";
+    event.target.value = ""||     setErrors([])
+
+
   };
 
   return (
@@ -91,6 +93,11 @@ function Signup({ onLogin, autologin }) {
               Have an account? <em>LogIn</em>
             </button>
           </div>
+          {errors.map((err) => (
+            <li className="key" key={err}>
+              {err}
+            </li>
+          ))}
         </div>
       </div>
     </>

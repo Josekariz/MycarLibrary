@@ -16,7 +16,7 @@ function Login({ onLogin, autologin }) {
       body: JSON.stringify({ username, password }),
     }).then((r) => {
       if (r.ok) {
-        autologin()
+        autologin();
         to_home();
         r.json().then((user) => onLogin(user));
       } else {
@@ -36,6 +36,7 @@ function Login({ onLogin, autologin }) {
 
   const handleClear = (event) => {
     event.target.value = "";
+    setErrors([]);
   };
 
   return (
@@ -72,7 +73,6 @@ function Login({ onLogin, autologin }) {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             ></input>
-
             <button className="btn" onClick={handleSubmit}>
               Login
             </button>
@@ -80,6 +80,11 @@ function Login({ onLogin, autologin }) {
               Don't have an account? <em>SignUp</em>
             </button>
           </div>
+          {errors.map((err) => (
+            <li className="key" key={err}>
+              {err}
+            </li>
+          ))}
         </div>
       </div>
     </>

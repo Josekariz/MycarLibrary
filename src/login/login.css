@@ -63,3 +63,23 @@ padding: 4px;
 background-color: #9AC4F8;
 
 }
+
+.key{
+  display: flex;
+  text-align: center;
+  color: rgb(255, 4, 0);
+  list-style: none;
+ font-size: 16px;
+ text-transform: uppercase;
+
+}
+
+@media screen and (max-width: 480px) {
+  .cover {
+    width: 15em;
+    padding: 2px;
+  }
+  .key{
+    font-size: 10px;
+  }
+}

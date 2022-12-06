@@ -10,12 +10,6 @@ function Home({ setUser, user }) {
   const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
-    fetch("/reviews")
-      .then((r) => r.json())
-      .then(setReviews);
-  }, []);
-
-  useEffect(() => {
     getReviews();
   }, []);
   function getReviews() {
@@ -32,7 +26,7 @@ function Home({ setUser, user }) {
     })
     .map((car) => {
       return (
-        <div className="car-card">
+        <div key={car.id} className="car-card">
           <img className="img" alt="car" src={car.image_url} />
           <h4>Model: {car.model}</h4>
           <h4>Name: {car.name}</h4>

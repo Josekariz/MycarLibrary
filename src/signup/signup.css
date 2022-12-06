@@ -67,3 +67,30 @@ background-color: #9AC4F8;
 
 
 }
+.key{
+  display: flex;
+  text-align: center;
+  color: rgb(255, 4, 0);
+  list-style: none;
+ font-size: 16px;
+ text-transform: uppercase;
+ width: 200px;
+ justify-content: space-between;
+
+}
+
+@media screen and (max-width: 600px) {
+  .cover {
+    width: 18em;
+  }
+  .key{
+    font-size: 10px;
+  }
+  .sgn{
+    overflow: hidden;
+    width: 90%;
+  }
+  .logo{
+    display: none;
+  }
+}
