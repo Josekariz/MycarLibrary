@@ -6,10 +6,10 @@ import Contact from "./contact/Contact";
 import Review from "./form/Review.js";
 import Signup from "./signup/SignUp.js";
 // import EditPropertyForm from "./components/AddPropertyForm ";
-const BaseRouter = () => (
+const BaseRouter = ({setUser,user}) => (
   <div>
     <Routes>
-      <Route path="/home" element={<Home />} />
+      <Route path="/home" element={<Home user={user} setUser={setUser} />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/review" element={<Review />} />
       <Route path="/signup" element={<Signup/>} />
