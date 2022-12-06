@@ -34,6 +34,10 @@ function Review() {
     });
   }
 
+ const handleClear = (event) => {
+    event.target.value = "";
+  };
+
   return (
     <>
       <div className="review">
@@ -43,23 +47,22 @@ function Review() {
             <form className="form" onSubmit={handleSubmit}>
               <label for="model">Model</label>
               <input
+                onClick={handleClear}
                 placeholder="Model e.g Mercedes"
-                autoComplete="off"
-                autoCapitalize="on"
                 value={model}
                 onChange={(e) => setModel(e.target.value)}
               />
               <label for="name">Name</label>
               <input
+                onClick={handleClear}
                 placeholder="Name e.g c200"
-                autoComplete="off"
-                autoCapitalize="on"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
               />
               <label for="image_url">Model</label>
               <input
-                placeholder="image_url"
+                onClick={handleClear}
+                placeholder="Image url"
                 autoComplete="off"
                 value={image_url}
                 onChange={(e) => setImage_url(e.target.value)}
@@ -67,13 +70,15 @@ function Review() {
 
               <label for="info">Info</label>
               <input
+                onClick={handleClear}
                 className="info"
-                placeholder="Leave a review on your car"
-                autoComplete="off"
+                placeholder="your take on it?"
                 value={info}
                 onChange={(e) => setInfo(e.target.value)}
               />
-              <button className="submit" type="submit"><em>Submit</em></button>
+              <button className="submit" type="submit">
+                <em>Submit</em>
+              </button>
             </form>
           </div>
         </div>

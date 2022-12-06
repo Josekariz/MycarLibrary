@@ -33,6 +33,11 @@ function Login({ onLogin }) {
   const to_home = () => {
     navigate("/home");
   };
+
+  const handleClear = (event) => {
+    event.target.value = "";
+  };
+
   return (
     <>
       <div className="login">
@@ -46,6 +51,7 @@ function Login({ onLogin }) {
               <h3 style={{ color: "white" }}>Username</h3>
             </label>
             <input
+              onClick={handleClear}
               type="text"
               className="input"
               placeholder="username"
@@ -58,6 +64,7 @@ function Login({ onLogin }) {
             </label>
 
             <input
+              onClick={handleClear}
               type="password"
               className="input"
               placeholder="******"
@@ -69,7 +76,7 @@ function Login({ onLogin }) {
             <button className="btn" onClick={handleSubmit}>
               Login
             </button>
-            <button onClick={to_signup} className="sgn">
+            <button type="submit" onClick={to_signup} className="sgn">
               Don't have an account? <em>SignUp</em>
             </button>
           </div>

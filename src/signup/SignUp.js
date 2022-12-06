@@ -12,7 +12,7 @@ function Signup({ onLogin }) {
   const to_login = () => {
     navigate("/");
   };
- 
+
   function handleSubmit(e) {
     e.preventDefault();
     setErrors([]);
@@ -35,7 +35,9 @@ function Signup({ onLogin }) {
       }
     });
   }
-  console.log(errors);
+  const handleClear = (event) => {
+    event.target.value = "";
+  };
 
   return (
     <>
@@ -49,10 +51,10 @@ function Signup({ onLogin }) {
               <h3 style={{ color: "white" }}>Username</h3>
             </label>
             <input
+              onClick={handleClear}
               type="text"
               className="input"
               placeholder="username"
-              autoComplete="off"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
             ></input>
@@ -61,24 +63,24 @@ function Signup({ onLogin }) {
               <h3 style={{ color: "white" }}>Password</h3>
             </label>
             <input
+              onClick={handleClear}
               type="password"
               className="input"
               placeholder="**********"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              autoComplete="current-password"
             ></input>
 
             <label for="password confirmation">
               <h3 style={{ color: "white" }}>Password confirmation</h3>
             </label>
             <input
+              onClick={handleClear}
               type="password"
               className="input"
               placeholder="**********"
               value={passwordConfirmation}
               onChange={(e) => setPasswordConfirmation(e.target.value)}
-              autoComplete="current-password"
             ></input>
 
             <button onClick={handleSubmit} className="btn">
