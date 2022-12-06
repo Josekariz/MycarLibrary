@@ -7,16 +7,19 @@ function App() {
 
   useEffect(() => {
     // auto-login
+    autologin();
+  }, []);
+  const autologin = () => {
     fetch("/me").then((r) => {
       if (r.ok) {
         r.json().then((user) => setUser(user));
       }
     });
-  }, []);
+  };
   return (
     <>
       <Router>
-        <BaseRouter user={user} setUser={setUser} />
+        <BaseRouter user={user} setUser={setUser} autologin={autologin}/>
       </Router>
     </>
   );
