@@ -14,6 +14,16 @@ function Home({ setUser, user }) {
       .then((r) => r.json())
       .then(setReviews);
   }, []);
+
+  useEffect(() => {
+    getReviews();
+  }, []);
+  function getReviews() {
+    fetch("/reviews")
+      .then((r) => r.json())
+      .then(setReviews);
+  }
+
   const car = reviews
     .filter((item) => {
       return search.toLowerCase() === ""
@@ -23,22 +33,21 @@ function Home({ setUser, user }) {
     .map((car) => {
       return (
         <div className="car-card">
-          <img
-            className="img"
-            alt="car"
-            src={car.image_url}
-          />
+          <img className="img" alt="car" src={car.image_url} />
           <h4>Model: {car.model}</h4>
           <h4>Name: {car.name}</h4>
           <h4>info:</h4>
-          <textarea className="txt">
-          {car.info}
-          </textarea>
+          <textarea className="txt">{car.info}</textarea>
           <div className="btnholder">
             <button className="bt green">
               <em>Update</em>
             </button>
-            <button className="bt red">
+            <button
+              className="bt red"
+              onClick={() => {
+                handleDelClick(car.id);
+              }}
+            >
               <em>Delete</em>
             </button>
           </div>
@@ -46,12 +55,20 @@ function Home({ setUser, user }) {
       );
     });
 
+  function handleDelClick(id) {
+    fetch(`reviews/${id}`, {
+      method: "DELETE",
+    })
+      .then((res) => res.json)
+      .then(getReviews);
+  }
+
   if (!user) return <Login onLogin={setUser} />;
   return (
     <>
       <div className="home">
         <NavBar user={user} setUser={setUser} />
-        <Search setSearch={setSearch}/>
+        <Search setSearch={setSearch} />
         <div className="homecard">{car}</div>
       </div>
     </>
