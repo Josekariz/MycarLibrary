@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "../signup/signup.css";
 import { useNavigate } from "react-router-dom";
 
-function Signup({ onLogin }) {
+function Signup({ onLogin, autologin }) {
   const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -29,6 +29,7 @@ function Signup({ onLogin }) {
     }).then((r) => {
       if (r.ok) {
         r.json().then((user) => onLogin(user));
+        autologin()
         navigate("/home");
       } else {
         r.json().then((err) => setErrors(err.errors));

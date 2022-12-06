@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import "../login/login.css";
-function Login({ onLogin }) {
+function Login({ onLogin, autologin }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState([]);
@@ -16,14 +16,14 @@ function Login({ onLogin }) {
       body: JSON.stringify({ username, password }),
     }).then((r) => {
       if (r.ok) {
-        r.json().then((user) => onLogin(user));
+        autologin()
         to_home();
+        r.json().then((user) => onLogin(user));
       } else {
         r.json().then((err) => setErrors(err.errors));
       }
     });
   }
-  console.log(errors);
 
   const navigate = useNavigate();
 
