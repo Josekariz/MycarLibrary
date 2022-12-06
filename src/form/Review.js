@@ -3,12 +3,10 @@ import { useNavigate } from "react-router-dom";
 import "./review.css";
 import { useState } from "react";
 function Review() {
-  const [model, setModel] = useState("Lmborghini");
-  const [name, setName] = useState("Sterrato");
-  const [info, setInfo] = useState("Leave a review about this awesome car");
-  const [image_url, setImage_url] = useState(
-    "https://images.unsplash.com/photo-1555215695-3004980ad54e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
-  );
+  const [model, setModel] = useState("");
+  const [name, setName] = useState("");
+  const [info, setInfo] = useState("");
+  const [image_url, setImage_url] = useState("");
   const [errors, setErrors] = useState([]);
   const navigate = useNavigate();
 
@@ -34,7 +32,7 @@ function Review() {
     });
   }
 
- const handleClear = (event) => {
+  const handleClear = (event) => {
     event.target.value = "";
   };
 
@@ -49,6 +47,7 @@ function Review() {
               <input
                 onClick={handleClear}
                 placeholder="Model e.g Mercedes"
+                required
                 value={model}
                 onChange={(e) => setModel(e.target.value)}
               />
@@ -56,6 +55,7 @@ function Review() {
               <input
                 onClick={handleClear}
                 placeholder="Name e.g c200"
+                required
                 value={name}
                 onChange={(e) => setName(e.target.value)}
               />
@@ -64,6 +64,7 @@ function Review() {
                 onClick={handleClear}
                 placeholder="Image url"
                 autoComplete="off"
+                required
                 value={image_url}
                 onChange={(e) => setImage_url(e.target.value)}
               />
@@ -81,6 +82,11 @@ function Review() {
               </button>
             </form>
           </div>
+          {errors.map((err) => (
+            <li className="key" key={err}>
+              {err}
+            </li>
+          ))}
         </div>
       </div>
     </>
