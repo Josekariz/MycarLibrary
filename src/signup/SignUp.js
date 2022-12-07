@@ -37,9 +37,7 @@ function Signup({ onLogin, autologin }) {
     });
   }
   const handleClear = (event) => {
-    event.target.value = ""||     setErrors([])
-
-
+    event.target.value = "" || setErrors([]);
   };
 
   return (

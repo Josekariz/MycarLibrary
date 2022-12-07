@@ -1,18 +1,18 @@
 import React from "react";
-import "./search.css"
+import "./search.css";
 function Search({ search, setSearch }) {
   return (
     <div className="search">
-      <br/>
+      <br />
       <input
-      className="in"
+        className="in"
         type="text"
         placeholder="search your car name"
         onChange={(e) => {
           setSearch(e.target.value);
         }}
       />
-      <br/>
+      <br />
     </div>
   );
 }

@@ -1,10 +1,14 @@
 .review {
   background-color: #f6e58b;
   height: 100vh;
+  background-image: url("../assets/s.jpg");
+  background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
 }
 .review-card {
   margin: auto;
-  background-color: #fdfeea;
+  background-color: #fdfeeae9;
   width: 80%;
   height: auto;
   display: flex;
@@ -45,4 +49,12 @@ input{
 .submit{
   background-color: #b3ee20;
   padding: 5px;
+}
+@media screen and (max-width: 720px) {
+  .review-card,
+  .container,
+  .submit {
+    width: 100%;
+    font-size: 10px;
+  }
 }

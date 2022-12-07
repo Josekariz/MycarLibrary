@@ -19,7 +19,7 @@ function App() {
   return (
     <>
       <Router>
-        <BaseRouter user={user} setUser={setUser} autologin={autologin}/>
+        <BaseRouter user={user} setUser={setUser} autologin={autologin} />
       </Router>
     </>
   );
