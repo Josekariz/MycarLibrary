@@ -48,6 +48,20 @@ To install the project, you will need to clone the repository from GitHub and in
 4. Visit http://localhost:3000 in your browser to view the project.
 
 
+# Using the app
+
+## Sign Up for an account
+ ![Clone image](src/assets/a.png)
+
+## Go to the home screen that is empty 
+ ![Clone image](src/assets/c.png)
+
+## Hit the review in the navbar and add your favorites
+ ![Clone image](src/assets/d.png)
+
+
+## Wallllah! Know u have your first car :smile:
+ ![Clone image](src/assets/e.png)
 
 
 ## Contributing

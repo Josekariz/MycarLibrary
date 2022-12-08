@@ -2,8 +2,8 @@
   background-color: #f6e58b;
   background-image: url("../assets/s.jpg");
   background-position: center;
-background-repeat: no-repeat;
-background-size: cover;
+  background-repeat: no-repeat;
+  background-size: cover;
   height: auto;
 }
 .homecard {
@@ -59,14 +59,14 @@ background-size: cover;
 }
 .bt {
   padding: 2px 12px;
-border-radius: 2px;
+  border-radius: 2px;
 }
 
-.green{
-  background-color: #B3EE20;
+.green {
+  background-color: #b3ee20;
 }
-.red{
-  background-color: rgba(255, 51, 20, .85);
+.red {
+  background-color: rgba(255, 51, 20, 0.85);
 }
 @media screen and (max-width: 500px) {
   .car-card {
@@ -74,14 +74,13 @@ border-radius: 2px;
   }
 }
 @media screen and (max-width: 900px) {
-    .btnholder {
+  .btnholder {
     width: 70%;
     justify-content: space-around;
     padding: 2px;
   }
-  .bt{
-padding: 2px;
-
+  .bt {
+    padding: 2px;
   }
 }
 @media screen and (max-width: 720px) {
@@ -90,5 +89,9 @@ padding: 2px;
     padding: 1px;
     justify-self: space-around;
   }
-
+}
+.initial {
+  text-align: center;
+  color: #b3ee20;
+  font-size: 15px;
 }

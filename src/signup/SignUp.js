@@ -16,7 +16,7 @@ function Signup({ onLogin, autologin }) {
   function handleSubmit(e) {
     e.preventDefault();
     setErrors([]);
-    fetch("/signup", {
+    fetch("https://mycarlibrary-production.up.railway.app/signup", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
