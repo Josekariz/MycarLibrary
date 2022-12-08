@@ -3,10 +3,14 @@ import { useNavigate } from "react-router-dom";
 import "./review.css";
 import { useState } from "react";
 function Review() {
-  const [model, setModel] = useState("");
-  const [name, setName] = useState("");
-  const [info, setInfo] = useState("");
-  const [image_url, setImage_url] = useState("");
+  const [model, setModel] = useState(" Mercedes-Benz ");
+  const [name, setName] = useState("S-Class");
+  const [info, setInfo] = useState(
+    "The Mercedes-Benz S-Class, formerly known as Sonderklasse (German for special class, abbreviated as S-Klasse), is a series of full-sized luxury sedans, limousines and armored sedans produced by the German automaker Mercedes-Benz, a division of the German company Mercedes-Benz. The S-Class is the designation for top-of-the-line Mercedes-Benz models and was officially introduced in 1972 with the W116, and has remained in use ever since. The S-Class is the flagship vehicle for Mercedes-Benz."
+  );
+  const [image_url, setImage_url] = useState(
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Mercedes-Benz_W223_IMG_6663.jpg/280px-Mercedes-Benz_W223_IMG_6663.jpg"
+  );
   const [errors, setErrors] = useState([]);
   const navigate = useNavigate();
 
