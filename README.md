@@ -1,17 +1,29 @@
 # MycarLibrary :car:
+ 
+
 # Welcome to my Frontend Project :blush:
 
 This project is a frontend web application that allows users to interact with an API and view the data in a user-friendly way.
 
+### Mvp :m: :v: 
+
+- user can create an account
+- User can add car reviews 
+- User can delete reviews 
+- User can create an account
+- User can login and log out of their respective accounts
 
 
-# Link to backend repo
+```
+If you wish to use my demo account username: jose password: 123
+```
+# Link to backend repo :back: :link:
  ```
  
  https://github.com/Josekariz/my-car-lib-backend
  
  ```
-## Features
+## Features :sparkling_heart: :sparkles:
 
 This project includes the following features: 
 
@@ -21,7 +33,7 @@ This project includes the following features:
 - Authentication for securing user data
 - Response caching for performance optimization
 ```
-## Installation
+## Installation :download:
 
 To install the project, you will need to clone the repository from GitHub and install the dependencies.
 
@@ -31,24 +43,24 @@ To install the project, you will need to clone the repository from GitHub and in
 - NPM
 
 
-# Installing
+# Installing :white_check_mark: :white_check_mark::white_check_mark:
 
-1. Fork and Clone the repository from GitHub with the following command:
+1. Fork and Clone the repository from GitHub :computer: with the following command: 
 
 `git clone https://github.com/username/project-name.git`
 
-2. Install the dependencies with the following command:
+2. Install the dependencies with the following command: :zap:
 
 `npm install`
 
-3. Start the server with the following command:
+3. Start the server with the following command: :zap:
 
 `npm start`
 
 4. Visit http://localhost:3000 in your browser to view the project.
 
 
-# Using the app
+# Using the app 
 
 ## Sign Up for an account
  ![Clone image](src/assets/a.png)
@@ -64,9 +76,11 @@ To install the project, you will need to clone the repository from GitHub and in
  ![Clone image](src/assets/e.png)
 
 
+
+## Feel free to add more car reviews and enjoy the expereience :grin: :+1:
 ## Contributing
 
-To contribute to this project, please submit a pull request with your changes.
+To contribute to this project, please submit a pull request with your changes. 
 
 ## License
 
