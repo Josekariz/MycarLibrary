@@ -50,7 +50,7 @@ function Home({ setUser, user }) {
     });
 
   function handleDelClick(id) {
-    fetch(`reviews/${id}`, {
+    fetch(`/reviews/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json)
@@ -65,6 +65,7 @@ function Home({ setUser, user }) {
         <Search setSearch={setSearch} />
         <div className="homecard">{car}</div>
       </div>
+      <p className="initial" >Add a car to get the full view</p>
     </>
   );
 }
