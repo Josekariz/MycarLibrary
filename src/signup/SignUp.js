@@ -10,7 +10,7 @@ function Signup({ onLogin, autologin }) {
   const [errors, setErrors] = useState([]);
 
   const to_login = () => {
-    navigate("/");
+    navigate("/login");
   };
 
   function handleSubmit(e) {

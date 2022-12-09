@@ -13,7 +13,7 @@ const BaseRouter = ({setUser,user, autologin}) => (
       <Route path="/contact" element={<Contact />} />
       <Route path="/review" element={<Review />} />
       <Route path="/signup" element={<Signup autologin={autologin}/>} />
-      <Route path="/" element={<Login autologin={autologin} />} />
+      <Route path="/login" element={<Login autologin={autologin} />} />
 
     </Routes>
   </div>
