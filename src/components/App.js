@@ -10,7 +10,7 @@ function App() {
     autologin();
   }, []);
   const autologin = () => {
-    fetch("/me").then((r) => {
+    fetch("https://mycarlibrary-production.up.railway.app/me").then((r) => {
       if (r.ok) {
         r.json().then((user) => setUser(user));
       }
