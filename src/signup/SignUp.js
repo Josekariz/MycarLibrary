@@ -30,7 +30,7 @@ function Signup({ onLogin, autologin }) {
       if (r.ok) {
         r.json().then((user) => onLogin(user));
         autologin();
-        navigate("/home");
+        navigate("/");
       } else {
         r.json().then((err) => setErrors(err.errors));
       }

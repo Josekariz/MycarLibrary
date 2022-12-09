@@ -29,7 +29,7 @@ function Review() {
       }),
     }).then((r) => {
       if (r.ok) {
-        navigate("/home");
+        navigate("/");
       } else {
         r.json().then((err) => setErrors(err.errors));
       }

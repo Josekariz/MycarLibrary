@@ -31,7 +31,7 @@ function Login({ onLogin, autologin }) {
     navigate("/signup");
   };
   const to_home = () => {
-    navigate("/home");
+    navigate("/");
   };
 
   const handleClear = (event) => {
