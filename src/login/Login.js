@@ -8,7 +8,7 @@ function Login({ onLogin, autologin }) {
   const [errors, setErrors] = useState([]);
   function handleSubmit(e) {
     e.preventDefault();
-    fetch("/login", {
+    fetch("https://mycarlibrary-production.up.railway.app/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

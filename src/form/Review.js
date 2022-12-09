@@ -16,7 +16,7 @@ function Review() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    fetch("/reviews", {
+    fetch("https://mycarlibrary-production.up.railway.app/reviews", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
