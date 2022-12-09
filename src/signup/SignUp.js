@@ -10,7 +10,7 @@ function Signup({ onLogin, autologin }) {
   const [errors, setErrors] = useState([]);
 
   const to_login = () => {
-    navigate("/login");
+    navigate("/");
   };
 
   function handleSubmit(e) {
@@ -30,7 +30,7 @@ function Signup({ onLogin, autologin }) {
       if (r.ok) {
         r.json().then((user) => onLogin(user));
         autologin();
-        navigate("/");
+        navigate("/home");
       } else {
         r.json().then((err) => setErrors(err.errors));
       }

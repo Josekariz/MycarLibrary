@@ -9,11 +9,11 @@ import Signup from "./signup/SignUp.js";
 const BaseRouter = ({setUser,user, autologin}) => (
   <div>
     <Routes>
-      <Route path="/" element={<Home user={user} setUser={setUser} />} />
+      <Route path="/home" element={<Home user={user} setUser={setUser} />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/review" element={<Review />} />
       <Route path="/signup" element={<Signup autologin={autologin}/>} />
-      <Route path="/login" element={<Login autologin={autologin} />} />
+      <Route path="/" element={<Login autologin={autologin} />} />
 
     </Routes>
   </div>

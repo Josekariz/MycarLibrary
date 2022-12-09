@@ -10,7 +10,7 @@ function NavBar({ user, setUser }) {
     fetch("/logout", { method: "DELETE" }).then((r) => {
       if (r.ok) {
         setUser(null);
-        navigate("/login");
+        navigate("/");
       }
     });
   }
@@ -20,7 +20,7 @@ function NavBar({ user, setUser }) {
       <div className="center-div">
         <nav>
           <ul className="nav-links">
-            <Link to="/">
+            <Link to="/home">
               <li>Home</li>
             </Link>
             <Link to="/review">
